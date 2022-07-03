@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  k6-load-test:
+    container_name: k6-load-test
+    image: grafana/k6:0.38.3
+    volumes:
+      - ./tests:/src
+    command: run /src/index.js
