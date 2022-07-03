@@ -4,7 +4,7 @@
 import { HomePage } from './modules/home-page.js';
 
 // we name it not options, to export it
-// and use in index file
+// and use in index
 export const settings = {
   // when single stage define in root of the object
   vus:10,

@@ -27,7 +27,21 @@ sudo apt-get install k6
 
 ### Docker
 
-Docker seem to be most simple approach to me. Using docker-compose to store long docker commands is even easier in my opnion. See docker folder for more info and docker-compose.yml for simple implementation
+Docker seem to be most simple approach to me. Using docker-compose to store long docker commands is even easier in my opnion. See docker folder for more info and docker-compose.yml for simple implementation.
+
+### Using docker-compose
+
+If you have docker and docker-compose installed on your machine you can use simple command `docker-compose up`.
+For docker we use different script that for local k6 instace. I was not able to export reports from docker image back to local folder. This might be minor obstacle but I was not able to solve it for now.
+
+```bash
+# start solution
+docker-compose up
+# close and clan
+docker-compose down
+```
+
+**On my machine local go binary was visible faster than docker-compose container version**.
 
 ### Reports
 

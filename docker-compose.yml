@@ -6,4 +6,5 @@ services:
     image: grafana/k6:0.38.3
     volumes:
       - ./tests:/src
-    command: run /src/index.js
+    # we run different file in container because we cannot generate custom html report
+    command: run /src/in-docker.js
