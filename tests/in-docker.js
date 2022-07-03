@@ -1,7 +1,14 @@
-import maxLoad, { settings } from './max-load.js'
+// note js extension in the file names
+// it is REQUIRED
+import {rsdPageTitlesCheck} from './modules/rsdPageTitlesCheck.js'
+import { getOptions } from "./modules/getOptions.js"
+
+// extract test type from env variables
+const type = __ENV.TEST_TYPE || "load"
+console.log("Test type...", type)
 
 // export options to run
-export const options = settings
+export const options = getOptions(type)
 
-// export maxLoad script
-export default maxLoad
+// export script
+export default rsdPageTitlesCheck

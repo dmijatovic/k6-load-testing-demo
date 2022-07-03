@@ -1,13 +1,19 @@
+// js extension in the file names is REQUIRED
 // import html report, v 2.4.0
-import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/2.4.0/dist/bundle.js";
+import {htmlReport} from "https://raw.githubusercontent.com/benc-uk/k6-reporter/2.4.0/dist/bundle.js";
+// import local methods and settings
+import { rsdPageTitlesCheck } from './modules/rsdPageTitlesCheck.js'
+import { getOptions } from "./modules/getOptions.js"
 
-import maxLoad, { settings } from './max-load.js'
+// set type of load test to run
+// "load" | "endurance" | "stress"
+const type="endurance"
 
 // export options to run
-export const options = settings
+export const options = getOptions(type)
 
-
-const fileName = `${new Date().getTime()}_summary.html`
+// construct file name
+const fileName = `${new Date().getTime()}_${type}.html`
 
 // create html summary report
 export function handleSummary(data) {
@@ -16,4 +22,4 @@ export function handleSummary(data) {
   }
 }
 
-export default maxLoad
+export default rsdPageTitlesCheck

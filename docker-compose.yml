@@ -4,6 +4,10 @@ services:
   k6-load-test:
     container_name: k6-load-test
     image: grafana/k6:0.38.3
+    environment:
+      # set test type to run
+      # valid options are: stress, endurance, load
+      - TEST_TYPE=stress
     volumes:
       - ./tests:/src
     # we run different file in container because we cannot generate custom html report
